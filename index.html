@@ -59,6 +59,8 @@
                 <!-- <p v-show="error">Error :(</p>
             <p v-show="success">All good :)</p> -->
             </div>
+            <greeting>
+            </greeting>
 
         </div>
 
@@ -66,14 +68,16 @@
     <div id="app4" class="jumbotron row">
         <div class="col-sm">
             <h1>{{title}}</h1>
+            <greeting></greeting>
             <ul class="list-group">
                 <li class="list-group-item" v-for="name in names">{{name}}</li>
             </ul>
             <ul class="list-group col-sm">
                 <li class="list-group-item" v-for="detail in details">{{detail.name}} - {{detail.age}}</li>
             </ul>
+            <p v-on:click>{{myMethod}}</p>
         </div>
-
+        <!-- https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/ -->
     </div>
 
     <script src="app.js"></script>

@@ -1,3 +1,17 @@
+Vue.component("greeting", {
+  template:
+    '<p>Hey there, I am a {{name}}. <button class="badge badge-success btn btn-default btn-small" v-on:click="changeName">CHange Name</button></p>',
+  data: function() {
+    return {
+      name: "Jeff"
+    };
+  },
+  methods: {
+    changeName: function() {
+      this.name = "Mike";
+    }
+  }
+});
 new Vue({
   el: "#app",
   data: {
@@ -38,7 +52,7 @@ new Vue({
 });
 
 // New instance
-new Vue({
+var app3 = new Vue({
   el: "#app3",
   data: {
     title: "Conditionals!",
@@ -59,5 +73,10 @@ new Vue({
       { name: "Farshad", age: 26 },
       { name: "Shadab", age: 15 }
     ]
+  },
+  methods: {
+    myMethod: function() {
+      return app3.title;
+    }
   }
 });
