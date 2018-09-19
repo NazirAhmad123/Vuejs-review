@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="app" class="jumbotron">
+        <div class="row">
+            <div class="col-sm">
+                <h2>Name: {{name}}</h2>
+                <h2>Job: {{Job}}</h2>
+                <h3>Website: <a :href="website">shaun.com</a></h3>
+                <h3>{{greet('Shaun')}}</h3>
+            </div>
+            <div class="col-sm">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter email" v-model="email">
+                        <span class="label label-success">{{email}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                            v-model="password">
+                        <span class="label label-success">{{password}}</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enter</button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="app2" class="jumbotron container ">
+        <button class="btn btn-success" v-on:click="add(1)">Add a point</button>
+        <button class="btn btn-danger" v-on:click="sub(1)">Sub a point</button>
+        <hr>
+        <h2>Give {{name}} a point: {{point}}</h2>
+
+        <!-- <button class="btn btn-success" v-on:dblclick="add(10)">dbl click</button>
+        <button class="btn btn-danger" v-on:dblclick="sub(10)">dbl click</button> -->
+    </div>
+    <div id="app3" class="container jumbotron">
+        <div class="row">
+            <div class="col-sm">
+                <h1 id="title">{{title}}</h1>
+                <p class="body">{{body}}</p>
+                <hr>
+                <button v-on:click="error = !error" class="btn btn-primary btn-sm">Toggle Error</button>
+                <button v-on:click="success = !success" class="btn btn-warning btn-sm">Toggle success</button>
+                <p v-if="erorr">There has been an error.</p>
+                <p v-else-if="true">All good! :)</p>
+                <!-- <p v-show="error">Error :(</p>
+            <p v-show="success">All good :)</p> -->
+            </div>
+
+        </div>
+
+    </div>
+    <div id="app4" class="jumbotron row">
+        <div class="col-sm">
+            <h1>{{title}}</h1>
+            <ul class="list-group">
+                <li class="list-group-item" v-for="name in names">{{name}}</li>
+            </ul>
+            <ul class="list-group col-sm">
+                <li class="list-group-item" v-for="detail in details">{{detail.name}} - {{detail.age}}</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
